@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CypherH", "CypherH\CypherH.csproj", "{BA626534-5AB8-49A6-8E41-B302312D5314}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{D1CC735C-BBA7-4E43-850C-C478237DE067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BA626534-5AB8-49A6-8E41-B302312D5314}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA626534-5AB8-49A6-8E41-B302312D5314}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA626534-5AB8-49A6-8E41-B302312D5314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1CC735C-BBA7-4E43-850C-C478237DE067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CC735C-BBA7-4E43-850C-C478237DE067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CC735C-BBA7-4E43-850C-C478237DE067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CC735C-BBA7-4E43-850C-C478237DE067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
