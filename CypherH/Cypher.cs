@@ -21,29 +21,29 @@ namespace CypherH
             PasswordIterations = 100000;
         }
 
-        public string Encode(string text, string password, InitVector initVector = null)
+        public string Encode(string text, Password password, InitVector initVector = null)
         {
             var key = GetKey(password, SaltValue, PasswordIterations);
-            return RijndaelAlgorithm.Encrypt(text, initVector?.Value ?? InitVector.Value, key);
+            return RijndaelAlgorithm.EncryptAes(text, initVector?.Value ?? InitVector.Value, key);
         }
         public string Encode(string text, byte[] key, InitVector initVector = null)
         {
-            return RijndaelAlgorithm.Encrypt(text, initVector?.Value ?? InitVector.Value, key);
+            return RijndaelAlgorithm.EncryptAes(text, initVector?.Value ?? InitVector.Value, key);
         }
 
-        public string Decode(string text, string password, InitVector initVector = null)
+        public string Decode(string text, Password password, InitVector initVector = null)
         {
             var key = GetKey(password, SaltValue, PasswordIterations);
-            return RijndaelAlgorithm.Decrypt(text, initVector?.Value ?? InitVector.Value, key);
+            return RijndaelAlgorithm.DecryptAes(text, initVector?.Value ?? InitVector.Value, key);
         }
         public string Decode(string text, byte[] key, InitVector initVector = null)
         {
-            return RijndaelAlgorithm.Decrypt(text, initVector?.Value ?? InitVector.Value, key);
+            return RijndaelAlgorithm.DecryptAes(text, initVector?.Value ?? InitVector.Value, key);
         }
 
-        public byte[] GetKey(string password, byte[] saltValue = null, int? passwordIterations = null)
+        public byte[] GetKey(Password password, byte[] saltValue = null, int? passwordIterations = null)
         {
-            return RijndaelAlgorithm.GetKeyInBytes(password, saltValue ?? SaltValue, passwordIterations ?? PasswordIterations, _keySize);
+            return RijndaelAlgorithm.GetKeyInBytes(password.ByteVersion, saltValue ?? SaltValue, passwordIterations ?? PasswordIterations, _keySize);
         }
 
         public static byte[] GenerateRandomCryptographicKey(int keyLength)
